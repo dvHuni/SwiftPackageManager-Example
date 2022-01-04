@@ -13,6 +13,7 @@
 //  limitations under the License.
 
 import Foundation
+import UIKit
 import Alamofire
 
 public let API = Api.shared
