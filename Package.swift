@@ -62,7 +62,7 @@ let package = Package(
             name: "KakaoSDKAuth",
             dependencies: ["KakaoSDKCommon", "Alamofire"],
             path: "KakaoSDK/KakaoSDKAuth",
-            exclude: ["KakaoSDKAuth-Info.plist", "LICENSE"]
+            exclude: ["KakaoSDKAuth-Info.plist"]
         ),
         .target(
             name: "KakaoSDKCommon",
@@ -80,7 +80,7 @@ let package = Package(
             name: "KakaoSDKTemplate",
             dependencies: ["KakaoSDKCommon", "Alamofire"],
             path: "KakaoSDK/KakaoSDKTemplate",
-            exclude: ["KakaoSDKTemplate-Info.plist", "LICENSE"]
+            exclude: ["KakaoSDKTemplate-Info.plist"]
         ),
         .target(
             name: "KakaoSDKUser",
