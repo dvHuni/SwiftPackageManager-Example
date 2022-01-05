@@ -15,8 +15,24 @@ let package = Package(
             name: "SwiftPackageManager-Example",
             targets: ["SwiftPackageManager-Example"]),
         .library(
+            name: "KakaoSDKAuth",
+            targets: ["KakaoSDKAuth"]
+        ),
+        .library(
             name: "KakaoSDKCommon",
             targets: ["KakaoSDKCommon"]
+        ),
+        .library(
+            name: "KakaoSDKLink",
+            targets: ["KakaoSDKLink"]
+        ),
+        .library(
+            name: "KakaoSDKTemplate",
+            targets: ["KakaoSDKTemplate"]
+        ),
+        .library(
+            name: "KakaoSDKUser",
+            targets: ["KakaoSDKUser"]
         ),
     ],
     dependencies: [
@@ -43,10 +59,34 @@ let package = Package(
             dependencies: ["SwiftPackageManager-Example"]
         ),
         .target(
+            name: "KakaoSDKAuth",
+            dependencies: ["KakaoSDKCommon", "Alamofire"],
+            path: "KakaoSDK/KakaoSDKAuth",
+            exclude: ["KakaoSDKAuth-Info.plist", "LICENSE"]
+        ),
+        .target(
             name: "KakaoSDKCommon",
-            dependencies: ["Alamofire"],
-            path: "LocalKakaoSDK/KakaoSDKCommon",
+            dependencies: [],
+            path: "KakaoSDK/KakaoSDKCommon",
             exclude: ["KakaoSDKCommon-Info.plist"]
+        ),
+        .target(
+            name: "KakaoSDKLink",
+            dependencies: ["KakaoSDKCommon", "KakaoSDKTemplate", "Alamofire"],
+            path: "KakaoSDK/KakaoSDKLink",
+            exclude: ["KakaoSDKLink-Info.plist"]
+        ),
+        .target(
+            name: "KakaoSDKTemplate",
+            dependencies: ["KakaoSDKCommon", "Alamofire"],
+            path: "KakaoSDK/KakaoSDKTemplate",
+            exclude: ["KakaoSDKTemplate-Info.plist", "LICENSE"]
+        ),
+        .target(
+            name: "KakaoSDKUser",
+            dependencies: [],
+            path: "KakaoSDK/KakaoSDKUser",
+            exclude: ["KakaoSDKUser-Info.plist"]
         ),
     ]
 )
